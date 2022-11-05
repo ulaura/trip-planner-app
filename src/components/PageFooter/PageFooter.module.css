@@ -1,0 +1,33 @@
+.pageFooter {
+  background: #be5a4b;
+  padding: 10px 0 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerTitle {
+  color: #000;
+  font-size: 48px;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.followMe {
+color: #000;}
+
+.navList i {
+  font-size: 30px;
+}
+
+.socialMedia {
+  color: #000;
+}
+
+.socialMedia:hover{
+    color: #fff;
+}
