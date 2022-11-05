@@ -4,7 +4,7 @@ const PageFooter = () => {
   return (
     <footer className={styles.pageFooter}>
       <h1 className={`${styles.footerTitle} font__family__arizonia`}>
-        One life. One world. Explore it.
+        <span>One life.</span><span> One world.</span><span> Explore it.</span>
       </h1>
       <div>
         <h3 className={`${styles.followMe} font__family__arizonia`}>Follow Me</h3>
