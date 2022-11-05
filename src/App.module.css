@@ -1,0 +1,6 @@
+.tripList {
+    background-color: #e5e5e5;
+    /* TODO: delete width and margin from here*/
+    width: 50%;
+    margin: auto;
+}

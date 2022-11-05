@@ -1,0 +1,41 @@
+.rainbowDate {
+  display: grid;
+  grid-template-columns: 50px 50px 50px;
+  grid-template-rows: 15px 25px;
+}
+
+.gridItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+.headerFontSize {
+  font-size: 10px;
+}
+
+.headerMonthColor {
+  background: #f39c12;
+}
+
+.headerDayColor {
+  background: #e74c3c;
+}
+
+.headerYearColor {
+  background: #3498db;
+}
+
+.monthValueColor {
+  background: #f6b517;
+}
+
+.dayValueColor {
+  background: #ec7063;
+}
+
+.yearValueColor {
+  background: #5dade2;
+}
