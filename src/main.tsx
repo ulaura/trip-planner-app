@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,9 +10,34 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 import "./GlobalStyles.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Layout from './components/Layout/Layout';
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+
+const routes = createBrowserRouter([
+  {
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <App />,
+      },
+      {
+        path: "/login",
+        element: <h1>Welcome to login page. Not implemented yet.</h1>,
+      },
+      {
+        path: "/destination-conditions",
+        element: (
+          <h1>Welcome to destination conditions page. Not implemented yet. </h1>
+        ),
+      },
+    ],
+  },
+]);
+
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <App />
+     <RouterProvider router={routes}/>
   </React.StrictMode>
-)
+);

@@ -6,6 +6,7 @@ import styles from "./Trip.module.css";
 //TODO: move sidebard icons to a separate component (TripSideBar)
 //TODO: add media style for trip component
 //TODO: add colors to sidebar icons
+//TODO: add prities or eslint to project
 
 const Trip = ({ trip }: { trip: ITrip }) => {
 

@@ -1,8 +1,11 @@
-import PageFooter from "./components/PageFooter/PageFooter";
-import PageHeader from "./components/PageHeader/PageHeader";
+import PageFooter from "./components/Layout/PageFooter/PageFooter";
+import PageHeader from "./components/Layout/PageHeader/PageHeader";
 import Trip from "./components/Trip/Trip";
 import styles from "./App.module.css";
 import { ITrip, TripStatus } from "./Types";
+
+//TODO: connect firebase
+// TODO: read documentation about context api for login authentication with firebase
 
 const TRIPS_LIST = [
   {
@@ -61,14 +64,10 @@ const TRIPS_LIST = [
 
 const App = () => {
   return (
-    <section>
-      <PageHeader />
-      <section className={`${styles.tripList} d-flex flex-column gap-4`}>
-        {TRIPS_LIST.map((trip:ITrip) => {
-          return <Trip key={trip.id} trip={trip} />;
-        })}
-      </section>
-      <PageFooter />
+    <section className={`${styles.tripList} d-flex flex-column gap-4`}>
+      {TRIPS_LIST.map((trip: ITrip) => {
+        return <Trip key={trip.id} trip={trip} />;
+      })}
     </section>
   );
 };
