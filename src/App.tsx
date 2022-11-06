@@ -2,21 +2,7 @@ import PageFooter from "./components/PageFooter/PageFooter";
 import PageHeader from "./components/PageHeader/PageHeader";
 import Trip from "./components/Trip/Trip";
 import styles from "./App.module.css";
-
-import "@fortawesome/fontawesome-free/css/all.min.css";
-
-export interface ITrip {
-  id?: string;
-  locationName: string;
-  country: string;
-  continent: string;
-  image: string;
-  travelWays: string[];
-  totalCosts: number;
-  dateFrom: string;
-  dateTo: string;
-  status: string;
-}
+import { ITrip, TripStatus } from "./Types";
 
 const TRIPS_LIST = [
   {
@@ -30,7 +16,7 @@ const TRIPS_LIST = [
     totalCosts: 290,
     dateFrom: "2022-05-24",
     dateTo: "2022-06-24",
-    status: "Completed",
+    status: "Completed" as TripStatus,
   },
   {
     id: "e2",
@@ -43,7 +29,7 @@ const TRIPS_LIST = [
     totalCosts: 450,
     dateFrom: "2022-08-28",
     dateTo: "2022-09-15",
-    status: "Uncompleted",
+    status: "Uncompleted" as TripStatus,
   },
   {
     id: "e3",
@@ -56,7 +42,7 @@ const TRIPS_LIST = [
     totalCosts: 720,
     dateFrom: "2022-09-17",
     dateTo: "2022-10-07",
-    status: "Uncompleted",
+    status: "Uncompleted" as TripStatus,
   },
   {
     id: "e4",
@@ -69,7 +55,7 @@ const TRIPS_LIST = [
     totalCosts: 340,
     dateFrom: "2022-02-12",
     dateTo: "2022-04-18",
-    status: "Completed",
+    status: "Completed" as TripStatus,
   },
 ];
 

@@ -1,13 +1,37 @@
-import { ITrip } from "../../App";
+
+import { ITrip, TripStatus } from "../../Types";
 import RainbowDate from "../Reusable/RainbowDate";
 import styles from "./Trip.module.css";
 
+//TODO: move sidebard icons to a separate component (TripSideBar)
+//TODO: add media style for trip component
+//TODO: add colors to sidebar icons
+
 const Trip = ({ trip }: { trip: ITrip }) => {
+
+  const tripCompleted = trip.status === TripStatus.COMPLETED;
+
   return (
     <article className="bg-transparent d-flex flex-row-reverse justify-content-end">
       <div className={styles.tripActionSideBar}>
-
+        <div className={`${styles.actionDeleteTrip} ${styles.tripSideBarActions}`} delete-data="Delete">
+          <i className="fa-solid fa-trash text-white"></i>
+        </div>
+        { !tripCompleted &&
+        <div className={ `${styles.actionEditTrip} ${styles.tripSideBarActions}`} edit-data="Edit">
+          <i className="fa-sharp fa-solid fa-pen-to-square text-white"></i>
+        </div>
+        }
+        { !tripCompleted &&
+        <div className={`${styles.actionCompleteTrip} ${styles.tripSideBarActions}`} data-status="Complete">
+          <i className="fa-regular fa-circle-check text-white"></i>
+        </div>
+        }
+        <div className={`${styles.actionCloneTrip} ${styles.tripSideBarActions} `} clone-data="Clone">
+        <i className="fa-regular fa-clone text-white"></i>
+        </div>
       </div>
+
       <div className="bg-white w-100 px-4">
         <header>
           <h2 className="fw-bold m-0">{trip.locationName}</h2>
@@ -42,7 +66,7 @@ const Trip = ({ trip }: { trip: ITrip }) => {
               End:<span> <RainbowDate date={trip.dateTo}/></span>
             </span>
           </div>
-          <h6 className="d-flex m-0 py-1 text-secondary">Vacation mood: on.</h6>
+          <h6 className="d-flex m-0 py-1 text-secondary">{trip.status}</h6>
         </section>
       </div>
       <img className={styles.tripImage} src={trip.image} alt={`${trip.locationName}`}/>
