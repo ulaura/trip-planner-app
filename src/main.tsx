@@ -1,7 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App from "./App";
+import Layout from "./components/Layout/Layout";
 
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,8 +11,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 import "./GlobalStyles.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import Layout from './components/Layout/Layout';
-
 
 const routes = createBrowserRouter([
   {
@@ -35,9 +34,8 @@ const routes = createBrowserRouter([
   },
 ]);
 
-
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-     <RouterProvider router={routes}/>
+    <RouterProvider router={routes} />
   </React.StrictMode>
 );

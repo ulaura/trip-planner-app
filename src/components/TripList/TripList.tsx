@@ -1,9 +1,9 @@
-import styles from "./TripList.module.css";
-import { ITrip, TripStatus } from "../../Types";
-import Trip from "../Trip/Trip";
+import { useEffect, useState } from "react";
 import { firestoreDatabase } from "../../services/FirebaseService";
 import { getDocs, collection } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { ITrip } from "../../Types";
+import Trip from "../Trip/Trip";
+import styles from "./TripList.module.css";
 
 // const TRIPS_LIST = [
 //    {
