@@ -1,5 +1,5 @@
 export interface ITrip {
-    id?: string;
+    id: string;
     locationName: string;
     country: string;
     continent: string;
