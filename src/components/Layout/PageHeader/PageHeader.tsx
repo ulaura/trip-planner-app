@@ -12,8 +12,8 @@ const PageHeader = () => {
         </Link>
       <nav>
         <ul className={styles.pageHeaderNavbarActions}>
-          <li className="">
-            <Link to="/home" className={`${styles.navLink} ${styles.logIn}`}>
+          <li>
+            <Link to="/home" className={styles.navLink}>
               <div className={styles.navbarItemsIconsContainer}>
                 <i className="fa-solid fa-house-chimney" aria-hidden="true"></i>
                 <i className="fa-solid fa-house-chimney" aria-hidden="true"></i>
@@ -21,8 +21,8 @@ const PageHeader = () => {
               <div className={styles.navbarItemNameContainer}><span data-text="Home">Home</span></div>
             </Link>
           </li>
-          <li className="">
-            <Link to="/login" className={`${styles.navLink} ${styles.logIn}`}>
+          <li>
+            <Link to="/login" className={styles.navLink}>
              <div className={styles.navbarItemsIconsContainer}>
               <i className="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
               <i className="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
@@ -30,8 +30,8 @@ const PageHeader = () => {
              <div className={styles.navbarItemNameContainer}><span data-text="Log in">Log in</span></div>
             </Link>
           </li>
-          <li className={styles.checkDestinationItemBox}>
-            <Link to="/destination-conditions" className={`${styles.navLink} ${styles.checkDestination}`}>
+          <li>
+            <Link to="/destination-conditions" className={styles.navLink}>
               <div className={styles.navbarItemsIconsContainer}>
                 <i className="fa-solid fa-cloud-sun" aria-hidden="true"></i>
                 <i className="fa-solid fa-cloud-sun" aria-hidden="true"></i>
