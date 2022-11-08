@@ -14,13 +14,17 @@
   text-align: center;
   padding: 5px 10px;
   border-radius: 6px 0 0 6px;
+  transition: 0.5s;
 }
 
 .tripSideBarActions:hover {
   background-color: rgba(141, 137, 156, 0.8);
 }
 
-.tripSideBarActions:hover::after {
+
+.tripSideBarActions::after {
+  z-index: -1;
+  opacity: 0;
   color: white;
   position: absolute;
   top: 50%;
@@ -30,20 +34,27 @@
   padding: 5px 0;
   background-color: rgba(141, 137, 156, 0.8);
   border-radius: 0 6px 6px 0;
+  transition: all 0.5s;
 }
 
-.actionDeleteTrip:hover::after {
+.actionDeleteTrip::after {
   content: attr(delete-data);
 }
 
-.actionEditTrip:hover::after {
+.actionEditTrip::after {
   content: attr(edit-data);
 }
 
-.actionCompleteTrip:hover::after {
+.actionCompleteTrip::after {
   content: attr(data-status);
 }
 
-.actionCloneTrip:hover::after {
+.actionCloneTrip::after {
   content: attr(clone-data);
+}
+
+.tripSideBarActions:hover::after {
+  z-index: 1;
+  opacity: 1;
+  background-color: rgba(141, 137, 156, 0.8);
 }

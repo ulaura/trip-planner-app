@@ -1,28 +1,112 @@
 .pageHeader {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #f2f2f2;
-  padding: 10px 0 10px 10px;
+  padding: 5px 0 5px 10px;
 }
 
 .headerLogo {
-  width: 80px;
+  width: 60px;
   margin-right: 10px;
 }
 
 .headerTitle {
-    font-size: 48px;
-    color: #000;
+  font-size: 35px;
+  color: #000;
+  margin-bottom: 0;
 }
 
 .logoTitleWrapper {
   display: flex;
   align-items: center;
+  text-decoration: none;
+}
+
+.pageHeaderNavbarActions {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.pageHeaderNavbarActions li {
+  list-style: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.pageHeaderNavbarActions li:last-child {
+  border-right: none;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.navbarItemsIconsContainer {
+  width: 40px;
+  height: 30px;
+  text-align: center;
+  overflow: hidden;
+
+}
+
+.navbarItemsIconsContainer i {
+  width: 100%;
+  height: 100%;
+  line-height: 35px;
+  font-size: 25px;
+  transition: 0.5s;
+  color: #000;
+}
+
+.navbarItemsIconsContainer i:last-child {
+  color: #be5a4b;
+}
+
+.navLink:hover .navbarItemsIconsContainer i {
+  transform: translateY(-115%);
+}
+
+.navbarItemNameContainer {
+  position: relative;
+  height: 20px;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.navbarItemNameContainer span {
+  display: block;
+  position: relative;
+  color: #000;
+  line-height: 20px;
+  transition: 0.5s;
+}
+
+.navbarItemNameContainer span:before {
+  content: attr(data-text);
+  position: absolute;
+  top: -110%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #be5a4b;
+}
+
+.navLink:hover .navbarItemNameContainer span {
+  transform: translateY(20px);
 }
 
 @media (max-width: 700px) {
-    .pageHeader {
-      justify-content: center;
-    }
+  .pageHeader {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 379px) {

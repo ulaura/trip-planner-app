@@ -21,6 +21,10 @@ const routes = createBrowserRouter([
         element: <App />,
       },
       {
+        path: "/home",
+        element: <App />,
+      },
+      {
         path: "/login",
         element: <h1>Welcome to login page. Not implemented yet.</h1>,
       },

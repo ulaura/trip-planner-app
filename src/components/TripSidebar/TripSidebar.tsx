@@ -7,7 +7,7 @@ const TripSidebar = ({ status }:{ status: TripStatus }) => {
   return (
     <section className={styles.tripActionSideBar}>
       <div className={`${styles.actionDeleteTrip} ${styles.tripSideBarActions}`} delete-data="Delete">
-        <i className={`${styles.iconActionDeleteTrip} fa-solid fa-trash text-white`}></i>
+        <i className={` fa-solid fa-trash text-white`}></i>
       </div>
       {!tripCompleted && (
         <div className={`${styles.actionEditTrip} ${styles.tripSideBarActions}`} edit-data="Edit">
