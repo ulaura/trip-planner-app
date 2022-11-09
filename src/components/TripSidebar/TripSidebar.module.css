@@ -10,6 +10,8 @@
 }
 
 .tripSideBarActions {
+  background-color: inherit;
+  border: none;
   position: relative;
   text-align: center;
   padding: 5px 10px;
@@ -38,11 +40,11 @@
 }
 
 .actionDeleteTrip::after {
-  content: attr(delete-data);
+  content: attr(data-delete);
 }
 
 .actionEditTrip::after {
-  content: attr(edit-data);
+  content: attr(data-edit);
 }
 
 .actionCompleteTrip::after {
@@ -50,7 +52,7 @@
 }
 
 .actionCloneTrip::after {
-  content: attr(clone-data);
+  content: attr(data-clone);
 }
 
 .tripSideBarActions:hover::after {

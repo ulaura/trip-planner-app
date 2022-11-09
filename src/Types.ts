@@ -15,3 +15,9 @@ export interface ITrip {
     COMPLETED="Completed",
     UNCOMPLETED="Uncompleted"
   }
+
+  export enum ModalType {
+    DANGER="danger",
+    SUCCESS="success"
+  }
+  

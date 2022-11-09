@@ -1,5 +1,5 @@
 import { ITrip } from "../../Types";
-import RainbowDate from "../Reusable/RainbowDate";
+import RainbowDate from "../Reusable/Date/RainbowDate";
 import TripSidebar from "../TripSidebar/TripSidebar";
 import styles from "./Trip.module.css";
 
