@@ -9,8 +9,8 @@
 .loginWrapper {
     position: relative;
     margin: auto;
-    background: rgba(0, 0, 0, 0.7);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to bottom, #3A6073, #16222A);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     color: #fff;
     border-radius: 30px;
     width: 100%;
@@ -33,6 +33,10 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
+}
+
+.inputGroup input::placeholder {
+    color:white;
 }
 
 
@@ -60,7 +64,13 @@
     max-width: 300px;
     border-radius: 0 0 30px 30px;
     padding: 20px 40px 10px;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.7), #656565);
+    background: linear-gradient(to bottom, #3A6073, #16222A);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     color: #fff;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.loginUserFormBtn:hover {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    background: linear-gradient(to bottom, #3A6073, #10191f);
+    color: #be5a4b;
 }

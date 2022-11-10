@@ -1,0 +1,62 @@
+.closeModalWrapper {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.closeModal {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.closeModal .leftright {
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    border-radius: 2px;
+    transform: rotate(45deg);
+    transition: all 0.3s ease-in;
+}
+
+.closeModal .rightleft {
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    transition: all 0.3s ease-in;
+}
+
+.closeModal label {
+    color: #000;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-in;
+    opacity: 0;
+}
+
+.closeModal .close {
+    margin: 12px 0 0 0;
+    position: absolute;
+}
+
+.closeModal:hover .leftright {
+    transform: rotate(-45deg);
+    background-color: #171717;
+}
+
+.closeModal:hover .rightleft {
+    transform: rotate(45deg);
+    background-color: #171717;
+}
+
+.closeModal:hover label {
+    opacity: 1;
+}

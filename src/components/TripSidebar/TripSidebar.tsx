@@ -29,8 +29,8 @@ const TripSidebar = ({ status }:{ status: TripStatus }) => {
         <i className="fa-regular fa-clone text-white"></i>
       </button>
 
-      <ActionConfirmation showModal={displayDeleteConfirmModal} type={ModalType.DANGER} title="Delete trip" message="Are you sure you want to delete this trip ?" confirm={() => {}} cancel={() => {}}/>
-      <ActionConfirmation showModal={displayCompleteConfirmModal} type={ModalType.DANGER} title="Complete trip" message="Are you sure you want to complete this trip ?" confirm={() => {}} cancel={() => {}}/>
+      <ActionConfirmation showModal={displayDeleteConfirmModal} type={ModalType.DANGER} title="Delete trip" message={"Are you sure you want to delete this trip?"+"\n"+"You cannot undo this action."} confirm={() => {}} cancel={() => {}}/>
+      <ActionConfirmation showModal={displayCompleteConfirmModal} type={ModalType.SUCCESS} title="Complete trip" message="Are you sure you want to complete this trip?" confirm={() => {}} cancel={() => {}}/>
     </section>
   );
 };

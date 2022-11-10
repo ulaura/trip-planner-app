@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import styles from "./PageHeader.module.css";
 
-//TODO: adapt and style page header component to added Links
+// TODO: add also Signout button and Logout
 
 const PageHeader = () => {
   return (
     <header className={styles.pageHeader}>
         <Link to="/" className={styles.logoTitleWrapper}>
           <img className={styles.headerLogo} src="logo1.png" alt="plane" />
-          <h1 className={`${styles.headerTitle} font__family__arizonia `}>Trip planner</h1>
+          <h1 className={styles.headerTitle}>Trip planner</h1>
         </Link>
       <nav>
         <ul className={styles.pageHeaderNavbarActions}>
@@ -22,12 +22,12 @@ const PageHeader = () => {
             </Link>
           </li>
           <li>
-            <Link to="/login" className={styles.navLink}>
+            <Link to="/signin" className={styles.navLink}>
              <div className={styles.navbarItemsIconsContainer}>
               <i className="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
               <i className="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
              </div>
-             <div className={styles.navbarItemNameContainer}><span data-text="Log in">Log in</span></div>
+             <div className={styles.navbarItemNameContainer}><span data-text="Log in">Sign in</span></div>
             </Link>
           </li>
           <li>

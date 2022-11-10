@@ -1,0 +1,94 @@
+/* COMMON */
+.actionConfirm {
+    width: 550px;
+}
+
+.modalHeader {
+    color: white;
+    padding: 10px;
+}
+
+.modalHeaderTitle {
+    font-size: 1.2rem;
+}
+
+.iconAndMsgCnt {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 25px;
+}
+
+.iconAndMsgCnt i {
+    font-size: 30px;
+}
+
+.message {
+    overflow: hidden;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.modalActions {
+    display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+    padding: 0 40px 20px 0px;
+}
+
+.actionBtn {
+    border: none;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: 0.6s;
+}
+
+.actionBtnCancel {
+    background-color: rgb(192, 192, 192);
+    color: #000;
+}
+
+.actionBtnCancel:hover {
+    box-shadow: 2px 6px 20px 1px rgba(0, 0, 0, 0.4);
+}
+
+.actionBtnConfirm {
+    color: #fff;
+}
+
+/* DANGER */
+.danger .modalHeader {
+    background-color: #FF0000;
+
+}
+
+
+.danger .iconAndMsgCnt i {
+    color: #FF0000
+}
+
+.danger .actionBtnConfirm {
+    background-color: #FF0000;
+}
+
+.danger .actionBtnConfirm:hover {
+    box-shadow: 2px 6px 20px 1px rgba(255, 0, 0, 0.50);
+}
+
+/* SUCCESS */
+.success .modalHeader {
+    background-color: #009000;
+}
+
+.success .iconAndMsgCnt i {
+    color: #009000;
+}
+
+.success .actionBtnConfirm {
+    background-color: #009000;
+}
+
+.success .actionBtnConfirm:hover {
+    box-shadow: 2px 6px 20px 1px rgba(0, 144, 0, 0.50);
+}

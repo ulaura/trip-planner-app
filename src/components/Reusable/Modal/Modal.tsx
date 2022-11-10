@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom";
 import Backdrop from "./Backdrop/Backdrop";
 import ModalOverlay from "./ModalOverlay/ModalOverlay";
+import "../../../GlobalStyles.css";
 
 const overlay = document.getElementById("overlays");
 

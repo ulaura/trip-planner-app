@@ -40,7 +40,7 @@ const routes = createBrowserRouter([
     element: <PageHeaderLayout />,
     children: [
       {
-        path: "/login",
+        path: "/signin",
         element: <Login />,
       },
       {

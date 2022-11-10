@@ -1,12 +1,12 @@
 import TripList from "./components/TripList/TripList";
+import styles from "./App.module.css";
 
-//TODO: read documentation about context api for login authentication with firebase
 
 const App = () => {
   return (
-    <>
-      <TripList/>
-    </>
+    <section className={styles.homePage}>
+      <TripList />
+    </section>
   );
 };
 
