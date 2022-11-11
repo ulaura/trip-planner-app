@@ -1,10 +1,11 @@
-import { ITrip, TripStatus } from "../../Types";
+import { ITrip, TravelWay, TripStatus } from "../../Types";
 import RainbowDate from "../Reusable/Date/RainbowDate";
 import TripSidebar from "../TripSidebar/TripSidebar";
 import styles from "./Trip.module.css";
 
 //TODO: add media style for trip component
 //TODO: add prettier or eslint to project
+//TODO: check imports order in all components
 
 const Trip = ({ trip, deleteTrip, updateTrip }: { trip: ITrip, deleteTrip: Function, updateTrip: Function }) => {
 
@@ -35,10 +36,10 @@ const Trip = ({ trip, deleteTrip, updateTrip }: { trip: ITrip, deleteTrip: Funct
             {trip.travelWays
               .map((travelWay: string) => {
                 const meansOfTravel =
-                  (travelWay === "Car" && <span>Car <i className="fa-solid fa-car"></i></span>) ||
-                  (travelWay === "Train" && <span>Train <i className="fa-solid fa-train"></i></span>) ||
-                  (travelWay === "Bus" && <span>Bus <i className="fa-solid fa-bus"></i></span>) ||
-                  (travelWay === "Plane" && <span>Plane <i className="fa-solid fa-plane-arrival"></i></span>);
+                  (travelWay === TravelWay.CAR && <span>Car <i className="fa-solid fa-car"></i></span>) ||
+                  (travelWay === TravelWay.TRAIN && <span>Train <i className="fa-solid fa-train"></i></span>) ||
+                  (travelWay === TravelWay.BUS && <span>Bus <i className="fa-solid fa-bus"></i></span>) ||
+                  (travelWay === TravelWay.PLANE && <span>Plane <i className="fa-solid fa-plane-arrival"></i></span>);
                 return meansOfTravel;
               }).reduce((result, travelWay) => (<>{result} -- {travelWay}</>))}
           </p>

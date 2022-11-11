@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { DELETE_CONFIRMATION_MESSAGE, DELETE_CONFIRMATION_TITLE, COMPLETE_TRIP_CONFIRMATION_MESSAGE, COMPLETE_TRIP_CONFIRMATION_TITLE } from "../../Constants";
 import { ModalType, TripStatus } from "../../Types";
 import ActionConfirmation from "../Reusable/Modal/Confirmations/ActionConfirmation";
 import styles from "./TripSidebar.module.css";
@@ -37,8 +38,8 @@ const TripSidebar = ({ status, deleteTrip, completeTrip }:{ status: TripStatus, 
         <i className="fa-regular fa-clone text-white"></i>
       </button>
 
-      <ActionConfirmation showConfirmation={displayDeleteConfirmModal} type={ModalType.DANGER} title="Delete trip" message={"Are you sure you want to delete this trip?"+"\n"+"You cannot undo this action."} confirm={deleteTripHandler} cancel={setDisplayDeleteConfirmModal}/>
-      <ActionConfirmation showConfirmation={displayCompleteConfirmModal} type={ModalType.DANGER} title="Complete trip" message="Are you sure you want to complete this trip?" confirm={completeTripHandler} cancel={setDisplayCompleteConfirmModal}/>
+      <ActionConfirmation showConfirmation={displayDeleteConfirmModal} type={ModalType.DANGER} title={DELETE_CONFIRMATION_TITLE} message={DELETE_CONFIRMATION_MESSAGE} confirm={deleteTripHandler} cancel={setDisplayDeleteConfirmModal}/>
+      <ActionConfirmation showConfirmation={displayCompleteConfirmModal} type={ModalType.DANGER} title={COMPLETE_TRIP_CONFIRMATION_TITLE} message={COMPLETE_TRIP_CONFIRMATION_MESSAGE} confirm={completeTripHandler} cancel={setDisplayCompleteConfirmModal}/>
     </section>
   );
 };

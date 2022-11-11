@@ -4,7 +4,7 @@ export interface ITrip {
     country: string;
     continent: string;
     image: string;
-    travelWays: string[]
+    travelWays: Array<TravelWay>,
     totalCosts: number;
     dateFrom: string;
     dateTo: string;
@@ -21,3 +21,9 @@ export interface ITrip {
     SUCCESS="success"
   }
   
+  export enum TravelWay {
+    CAR="Car",
+    TRAIN="Train",
+    BUS="Bus",
+    PLANE="Plane"
+  }

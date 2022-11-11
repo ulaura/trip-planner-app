@@ -40,6 +40,16 @@
   overflow: hidden;
 }
 
+.splitCnt{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.splitCnt input {
+  width: 100%;
+}
+
 .dateCnt {
   display: flex;
   gap: 10px;
