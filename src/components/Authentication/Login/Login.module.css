@@ -1,4 +1,4 @@
-.loginFormContent {
+.signinFormContent {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -6,7 +6,7 @@
     transform: translate(-50%, -50%);
 }
 
-.loginWrapper {
+.signinWrapper {
     position: relative;
     margin: auto;
     background: linear-gradient(to bottom, #3A6073, #16222A);

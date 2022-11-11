@@ -1,8 +1,8 @@
 import styles from "./CloseModalButton.module.css";
 
-const CloseModalButton = () => {
+const CloseModalButton = ({handleClick}: {handleClick: Function}) => {
   return (
-    <div className={styles.closeModalWrapper}>
+    <div onClick={() => handleClick(false)} className={styles.closeModalWrapper}>
       <div className={styles.closeModal}>
         <div className={styles.leftright}></div>
         <div className={styles.rightleft}></div>

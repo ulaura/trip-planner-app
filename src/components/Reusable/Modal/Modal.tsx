@@ -2,14 +2,16 @@ import ReactDOM from "react-dom";
 import Backdrop from "./Backdrop/Backdrop";
 import ModalOverlay from "./ModalOverlay/ModalOverlay";
 import "../../../GlobalStyles.css";
+import {useState } from "react";
 
 const overlay = document.getElementById("overlays");
 
-const Modal = (props:any) => {
+const Modal = ({children, modalVisible, changeVisibility}: {children: any, modalVisible: boolean, changeVisibility: Function}) => {
+
         return (
             <>
-            {ReactDOM.createPortal(<Backdrop/>, overlay!)}
-            {ReactDOM.createPortal(<ModalOverlay>{props.children}</ModalOverlay>, overlay!)}
+            {modalVisible && ReactDOM.createPortal(<Backdrop/>, overlay!)}
+            {modalVisible && ReactDOM.createPortal(<ModalOverlay handleClick={changeVisibility}>{children}</ModalOverlay>, overlay!)}
             </>
         );
 }

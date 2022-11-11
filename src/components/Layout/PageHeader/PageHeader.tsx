@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./PageHeader.module.css";
 
-// TODO: add also Signout button and Logout
-
 const PageHeader = () => {
   return (
     <header className={styles.pageHeader}>
@@ -28,6 +26,24 @@ const PageHeader = () => {
               <i className="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
              </div>
              <div className={styles.navbarItemNameContainer}><span data-text="Log in">Sign in</span></div>
+            </Link>
+          </li>
+          <li>
+            <Link to="/signin" className={styles.navLink}>
+             <div className={styles.navbarItemsIconsContainer}>
+              <i className="fa-solid fa-user-plus" aria-hidden="true"></i>
+              <i className="fa-solid fa-user-plus" aria-hidden="true"></i>
+             </div>
+             <div className={styles.navbarItemNameContainer}><span data-text="Sign up">Sign up</span></div>
+            </Link>
+          </li>
+          <li>
+            <Link to="/signin" className={styles.navLink}>
+             <div className={styles.navbarItemsIconsContainer}>
+              <i className="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i>
+              <i className="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i>
+             </div>
+             <div className={styles.navbarItemNameContainer}><span data-text="Log out">Log out</span></div>
             </Link>
           </li>
           <li>

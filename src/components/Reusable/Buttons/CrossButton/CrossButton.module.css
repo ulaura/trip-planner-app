@@ -1,0 +1,79 @@
+/* add-new-trip */
+.crossButtonWrapper {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 40px;
+}
+
+.crossButtonWrapper:hover::after {
+    content: "Add new trip";
+    position: absolute;
+    top: 0;
+    right: -120px;
+    width: 120px;
+    height: 40px;
+    border-left: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #004445;
+    transition: 0.3s;
+    animation: shake 500ms ease-in-out forwards;
+  }
+
+/* display-form-btn */
+.crossButton {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 40px;
+    background-color: #004445;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.crossButton:hover {
+    opacity: 1;
+  }
+
+/* display-form-btn__plus */
+.crossButtonPlus {
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.crossButtonPlus::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 5px;
+    transform: rotate(90deg);
+  }
+
+    
+  @keyframes shake {
+    0% {
+      transform: rotate(2deg);
+    }
+    50% {
+      transform: rotate(-3deg);
+    }
+    70% {
+      transform: rotate(3deg);
+    }
+  
+    100% {
+      transform: rotate(0deg);
+    }
+  }

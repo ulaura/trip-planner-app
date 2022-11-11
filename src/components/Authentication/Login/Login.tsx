@@ -4,8 +4,8 @@ import styles from "./Login.module.css";
 const Login = () => {
   
   return (
-    <section className={styles.loginFormContent}>
-      <div className={styles.loginWrapper}>
+    <section className={styles.signinFormContent}>
+      <div className={styles.signinWrapper}>
       <form>
         <img src="avatar.png" alt="user logo" className={styles.formImage} />
         <div className={styles.inputGroup}>

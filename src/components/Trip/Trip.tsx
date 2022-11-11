@@ -1,4 +1,4 @@
-import { ITrip } from "../../Types";
+import { ITrip, TripStatus } from "../../Types";
 import RainbowDate from "../Reusable/Date/RainbowDate";
 import TripSidebar from "../TripSidebar/TripSidebar";
 import styles from "./Trip.module.css";
@@ -6,11 +6,19 @@ import styles from "./Trip.module.css";
 //TODO: add media style for trip component
 //TODO: add prettier or eslint to project
 
-const Trip = ({ trip }: { trip: ITrip }) => {
+const Trip = ({ trip, deleteTrip, updateTrip }: { trip: ITrip, deleteTrip: Function, updateTrip: Function }) => {
+
+  const deleteTripHandler = ()=> {
+    deleteTrip(trip.id);
+  }
+
+  const completeTripHandler = () => {
+    updateTrip(trip.id, {status: TripStatus.COMPLETED});
+  }
 
   return (
     <article className="bg-transparent d-flex flex-row-reverse justify-content-end">
-      <TripSidebar status={trip.status}/>
+      <TripSidebar status={trip.status} deleteTrip={deleteTripHandler} completeTrip={completeTripHandler}/>
       <div className="bg-white w-100 px-4">
         <header>
           <h2 className="fw-bold m-0">{trip.locationName}</h2>

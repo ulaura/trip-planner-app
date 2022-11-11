@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react";
-import { firestoreDatabase } from "../../services/FirebaseService";
-import { getDocs, collection } from "firebase/firestore";
 import { ITrip } from "../../Types";
 import Trip from "../Trip/Trip";
 import styles from "./TripList.module.css";
@@ -60,30 +57,12 @@ import styles from "./TripList.module.css";
 //   },
 // ];
 
-const TripList = () => {
-  const [trips, setTrips] = useState<Array<ITrip>>([]);
-
-  useEffect(() => {
-
-    const getData = async () => {
-      const coll = collection(firestoreDatabase, "trips");
-      const response = await getDocs(coll);
-
-        const listOfTrips = response.docs.map(doc => {
-            const id = doc.id;
-            const data = doc.data();
-            return { id, ...data } as ITrip;
-        });
-        setTrips(listOfTrips);
-    };
-
-    getData();
-  }, []);
+const TripList = ({trips, deleteTrip, updateTrip}: {trips: Array<ITrip>, deleteTrip: Function, updateTrip: Function}) => {
 
   return (
     <section className={`${styles.tripList} d-flex flex-column gap-4`}>
       {trips.map((trip: ITrip) => {
-        return <Trip key={trip.id} trip={trip} />;
+        return <Trip key={trip.id} trip={trip} deleteTrip={deleteTrip} updateTrip={updateTrip}/>;
       })}
     </section>
   );

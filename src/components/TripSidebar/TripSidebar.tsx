@@ -3,12 +3,20 @@ import { ModalType, TripStatus } from "../../Types";
 import ActionConfirmation from "../Reusable/Modal/Confirmations/ActionConfirmation";
 import styles from "./TripSidebar.module.css";
 
-const TripSidebar = ({ status }:{ status: TripStatus }) => {
+const TripSidebar = ({ status, deleteTrip, completeTrip }:{ status: TripStatus, deleteTrip: Function, completeTrip: Function }) => {
   const tripCompleted = status === TripStatus.COMPLETED;
   const [displayDeleteConfirmModal, setDisplayDeleteConfirmModal] = useState(false);
   const [displayCompleteConfirmModal, setDisplayCompleteConfirmModal] = useState(false);
 
+  const deleteTripHandler = () => {
+    setDisplayDeleteConfirmModal(false);
+    deleteTrip();
+  }
 
+  const completeTripHandler = () => {
+    setDisplayCompleteConfirmModal(false);
+    completeTrip();
+  }
 
   return (
     <section className={styles.tripActionSideBar}>
@@ -29,8 +37,8 @@ const TripSidebar = ({ status }:{ status: TripStatus }) => {
         <i className="fa-regular fa-clone text-white"></i>
       </button>
 
-      <ActionConfirmation showModal={displayDeleteConfirmModal} type={ModalType.DANGER} title="Delete trip" message={"Are you sure you want to delete this trip?"+"\n"+"You cannot undo this action."} confirm={() => {}} cancel={() => {}}/>
-      <ActionConfirmation showModal={displayCompleteConfirmModal} type={ModalType.SUCCESS} title="Complete trip" message="Are you sure you want to complete this trip?" confirm={() => {}} cancel={() => {}}/>
+      <ActionConfirmation showConfirmation={displayDeleteConfirmModal} type={ModalType.DANGER} title="Delete trip" message={"Are you sure you want to delete this trip?"+"\n"+"You cannot undo this action."} confirm={deleteTripHandler} cancel={setDisplayDeleteConfirmModal}/>
+      <ActionConfirmation showConfirmation={displayCompleteConfirmModal} type={ModalType.DANGER} title="Complete trip" message="Are you sure you want to complete this trip?" confirm={completeTripHandler} cancel={setDisplayCompleteConfirmModal}/>
     </section>
   );
 };
