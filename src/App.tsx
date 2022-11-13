@@ -1,13 +1,14 @@
-import { useEffect, useReducer, useState } from "react";
-import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore";
+import { cloneElement, useEffect, useReducer, useState } from "react";
+import { addDoc, collection, deleteDoc, doc, getDocs, query, updateDoc, where } from "firebase/firestore";
 import { ITrip } from "./Types";
 import { firestoreDatabase } from "./services/FirebaseService";
-import { TRIPS } from "./Constants";
-import TripForm from "./components/CreateTripForm/TripForm";
+import { ADD_NEW_TRIP_TITLE, TRIPS } from "./Constants";
+import TripForm from "./components/TripForm/CreateTrip/CreateTrip";
 import Modal from "./components/Reusable/Modal/Modal";
 import CrossButton from "./components/Reusable/Buttons/CrossButton/CrossButton";
 import TripList from "./components/TripList/TripList";
 import styles from "./App.module.css";
+import { useAuth } from "./context/AuthenticationContext";
 
 
 const App = () => {
@@ -15,15 +16,18 @@ const App = () => {
   const [trips, setTrips] = useState<Array<ITrip>>([]);
   const [tripUpdateCount, incrementTripUpdateCount] = useReducer((x) => x + 1, 0);
 
+  const {user} = useAuth();
+
   const deleteTripHandler = async (tripId: string) => {
     const tripDoc = doc(firestoreDatabase, TRIPS, tripId);
     await deleteDoc(tripDoc);
     incrementTripUpdateCount();
   }
 
-  const updateTripHandler = (tripId: string, data: any) => {
-    const tripDoc = doc(firestoreDatabase, TRIPS, tripId);
-    updateDoc(tripDoc, data);
+  const updateTripHandler = ( data: any) => {
+    const {id, ...rest} = data;
+    const tripDoc = doc(firestoreDatabase, TRIPS, id);
+    updateDoc(tripDoc, rest);
     incrementTripUpdateCount();
   };
 
@@ -37,14 +41,15 @@ const App = () => {
   useEffect(() => {
     const getData = async () => {
       const coll = collection(firestoreDatabase, TRIPS);
-      const response = await getDocs(coll);
+      const tripQuery = query(coll, where("userId", "==", user?.uid));
+      const response = await getDocs(tripQuery);
 
         const listOfTrips = response.docs.map(doc => {
             const id = doc.id;
             const data = doc.data();
             return { id, ...data } as ITrip;
         });
-        setTrips(listOfTrips);
+        setTrips(listOfTrips.reverse());
     };
 
     getData();
@@ -57,11 +62,14 @@ const App = () => {
 
   return (
     <section className={styles.homePage}>
+
       <CrossButton handleClick={displayFormHandler}/>
+
         <Modal modalVisible={displayForm} changeVisibility={setDisplayForm}>
-          <TripForm saveData={saveDataHandler}/>
+          <TripForm formTitle={ADD_NEW_TRIP_TITLE} submitForm={saveDataHandler}/>
         </Modal>
-      <TripList trips={trips} deleteTrip={deleteTripHandler} updateTrip={updateTripHandler}/>
+
+      <TripList trips={trips} deleteTrip={deleteTripHandler} updateTrip={updateTripHandler} saveData={saveDataHandler}/>
     </section>
   );
 };

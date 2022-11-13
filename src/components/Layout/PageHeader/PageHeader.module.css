@@ -102,6 +102,14 @@
   transform: translateY(20px);
 }
 
+.active .navbarItemsIconsContainer i:first-child {
+  color: grey;
+}
+
+.active .navbarItemNameContainer span {
+  color:grey;
+}
+
 @media (max-width: 700px) {
   .pageHeader {
     justify-content: center;

@@ -49,6 +49,8 @@
     border-bottom: 1px solid #fff;
     outline: none;
     background-color: inherit;
+    transition: 0.5s;
+    
 }
 
 .inputGroup input:hover {
@@ -66,10 +68,16 @@
     background: linear-gradient(to bottom, #3A6073, #16222A);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     color: #fff;
+    transition: 0.5s;
 }
 
 .registerUserFormBtn:hover {
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     background: linear-gradient(to bottom, #3A6073, #10191f);
     color: #be5a4b;
+}
+
+.error {
+    margin: none;
+    color: red;
 }

@@ -1,5 +1,7 @@
+import { User, UserCredential } from "firebase/auth";
+
 export interface ITrip {
-    id: string;
+    id?: string;
     locationName: string;
     country: string;
     continent: string;
@@ -9,7 +11,16 @@ export interface ITrip {
     dateFrom: string;
     dateTo: string;
     status: TripStatus;
+    userId: string;
   }
+
+ export interface IAuthContext {
+    user: undefined | null | User,
+    isLoggedIn: boolean,
+    signin: Function,
+    logout: Function,
+    signup: Function
+}
 
   export enum TripStatus {
     COMPLETED="Completed",
@@ -26,4 +37,11 @@ export interface ITrip {
     TRAIN="Train",
     BUS="Bus",
     PLANE="Plane"
+  }
+
+  export enum NavRoute {
+    HOME="/",
+    SIGNIN="/signin",
+    SIGNUP="/signup",
+    LOGOUT="/logout"
   }

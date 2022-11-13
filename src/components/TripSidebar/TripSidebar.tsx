@@ -4,7 +4,7 @@ import { ModalType, TripStatus } from "../../Types";
 import ActionConfirmation from "../Reusable/Modal/Confirmations/ActionConfirmation";
 import styles from "./TripSidebar.module.css";
 
-const TripSidebar = ({ status, deleteTrip, completeTrip }:{ status: TripStatus, deleteTrip: Function, completeTrip: Function }) => {
+const TripSidebar = ({ status, deleteTrip, completeTrip, cloneTrip, editTrip }:{ status: TripStatus, deleteTrip: Function, completeTrip: Function, cloneTrip: Function, editTrip: Function }) => {
   const tripCompleted = status === TripStatus.COMPLETED;
   const [displayDeleteConfirmModal, setDisplayDeleteConfirmModal] = useState(false);
   const [displayCompleteConfirmModal, setDisplayCompleteConfirmModal] = useState(false);
@@ -25,7 +25,7 @@ const TripSidebar = ({ status, deleteTrip, completeTrip }:{ status: TripStatus, 
         <i className={` fa-solid fa-trash text-white`}></i>
       </button>
       {!tripCompleted && (
-        <button className={`${styles.actionEditTrip} ${styles.tripSideBarActions}`} data-edit="Edit">
+        <button onClick={() => editTrip(true)} className={`${styles.actionEditTrip} ${styles.tripSideBarActions}`} data-edit="Edit">
           <i className="fa-sharp fa-solid fa-pen-to-square text-white"></i>
         </button>
       )}
@@ -34,12 +34,12 @@ const TripSidebar = ({ status, deleteTrip, completeTrip }:{ status: TripStatus, 
           <i className="fa-regular fa-circle-check text-white"></i>
         </button>
       )}
-      <button className={`${styles.actionCloneTrip} ${styles.tripSideBarActions} `} data-clone="Clone">
+      <button onClick={() => cloneTrip()} className={`${styles.actionCloneTrip} ${styles.tripSideBarActions} `} data-clone="Clone">
         <i className="fa-regular fa-clone text-white"></i>
       </button>
 
       <ActionConfirmation showConfirmation={displayDeleteConfirmModal} type={ModalType.DANGER} title={DELETE_CONFIRMATION_TITLE} message={DELETE_CONFIRMATION_MESSAGE} confirm={deleteTripHandler} cancel={setDisplayDeleteConfirmModal}/>
-      <ActionConfirmation showConfirmation={displayCompleteConfirmModal} type={ModalType.DANGER} title={COMPLETE_TRIP_CONFIRMATION_TITLE} message={COMPLETE_TRIP_CONFIRMATION_MESSAGE} confirm={completeTripHandler} cancel={setDisplayCompleteConfirmModal}/>
+      <ActionConfirmation showConfirmation={displayCompleteConfirmModal} type={ModalType.SUCCESS} title={COMPLETE_TRIP_CONFIRMATION_TITLE} message={COMPLETE_TRIP_CONFIRMATION_MESSAGE} confirm={completeTripHandler} cancel={setDisplayCompleteConfirmModal}/>
     </section>
   );
 };

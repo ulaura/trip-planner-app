@@ -1,6 +1,6 @@
 
 .createNewTrip {
-  width: 70%;
+  width: 90%;
   height: 100%;
   margin: auto;
   display: flex;
@@ -11,13 +11,14 @@
   padding: 30px 0;
 }
 
+
 .formTitle {
   font-size: 45px;
   color: #004445;
 }
 
-.create-new-trip input,
-.create-new-trip select {
+.createNewTrip input,
+.createNewTrip select {
   align-self: stretch;
   padding: 5px;
   font-size: 20px;
@@ -60,7 +61,7 @@
   flex-grow: 1;
 }
 
-.create-new-trip input:hover {
+.createNewTrip input:hover {
   border-color: #086c6e;
 }
 
@@ -96,15 +97,15 @@
   height: 50px;
   font-family: "Arizonia", cursive;
   margin-top: 50px;
-  font-size: 30px;
+  font-size: 25px;
   background-color: #fff;
   border: solid 1px #ccc;
   border-radius: 10px;
+  transition: 0.5s;
 }
 
 .createNewTripFormBtn:hover {
   color: white;
-  transition: 0.7s;
   border-color: #086c6e;
   background-color: #086c6e;
 }
