@@ -1,14 +1,14 @@
-import { cloneElement, useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { addDoc, collection, deleteDoc, doc, getDocs, query, updateDoc, where } from "firebase/firestore";
 import { ITrip } from "./Types";
-import { firestoreDatabase } from "./services/FirebaseService";
 import { ADD_NEW_TRIP_TITLE, TRIPS } from "./Constants";
+import { firestoreDatabase } from "./services/FirebaseService";
 import TripForm from "./components/TripForm/CreateTrip/CreateTrip";
 import Modal from "./components/Reusable/Modal/Modal";
 import CrossButton from "./components/Reusable/Buttons/CrossButton/CrossButton";
 import TripList from "./components/TripList/TripList";
-import styles from "./App.module.css";
 import { useAuth } from "./context/AuthenticationContext";
+import styles from "./App.module.css";
 
 
 const App = () => {

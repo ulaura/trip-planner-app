@@ -9,6 +9,7 @@ import styles from "./Trip.module.css";
 
 //TODO: add media style for trip component
 //TODO: check imports order in all components
+// TODO: Use classnames package instead of string interpolation
 
 const Trip = ({ trip, deleteTrip, updateTrip, saveData }: { trip: ITrip, deleteTrip: Function, updateTrip: Function, saveData: Function}) => {
 
@@ -36,14 +37,10 @@ const Trip = ({ trip, deleteTrip, updateTrip, saveData }: { trip: ITrip, deleteT
 
   return (
     <>
-    {tripInEdit &&
      <Modal modalVisible={tripInEdit} changeVisibility={setTripInEdit}>
       <TripForm formTitle={UPDATE_TRIP_TITLE} trip={trip} submitForm={updateTripHandler}/>
     </Modal>
-    }
 
-    {
-      !tripInEdit && 
       <article className="bg-transparent d-flex flex-row-reverse justify-content-end">
       <TripSidebar status={trip.status} deleteTrip={deleteTripHandler} completeTrip={completeTripHandler} cloneTrip={cloneTripHandler} editTrip={setTripInEdit}/>
       <div className="bg-white w-100 px-4">
@@ -85,7 +82,6 @@ const Trip = ({ trip, deleteTrip, updateTrip, saveData }: { trip: ITrip, deleteT
       </div>
       <img className={styles.tripImage} src={trip.image} alt={`${trip.locationName}`}/>
     </article>
-    }
     </>
   );
 };

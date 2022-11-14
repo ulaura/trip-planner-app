@@ -1,6 +1,6 @@
-import { FirebaseError } from "firebase/app";
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { FirebaseError } from "firebase/app";
 import { AUTH_ERROR_MESSAGE } from "../../../Constants";
 import { useAuth } from "../../../context/AuthenticationContext";
 import { NavRoute } from "../../../Types";

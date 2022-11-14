@@ -1,6 +1,6 @@
-import { FirebaseError } from "firebase/app";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FirebaseError } from "firebase/app";
 import { AUTH_ERROR_MESSAGE } from "../../../Constants";
 import { useAuth } from "../../../context/AuthenticationContext";
 import { NavRoute } from "../../../Types";
@@ -34,7 +34,6 @@ const Signup = () => {
     try {
    await signup(email, password, redirectHandler);
   } catch (err) {
-    console.log(err);
     const authError = err as FirebaseError; //cast err to FirebaseError
     const message = AUTH_ERROR_MESSAGE.find(error => error.code === authError.code)?.message;
     setError(message || authError.message);

@@ -1,8 +1,8 @@
-import { ITrip, TravelWay, TripStatus } from "../../../Types";
-import { IMAGE_PLACEHOLDER } from "../../../Constants";
-import styles from "./CreateTrip.module.css";
 import { useState } from "react";
+import { Continents, ITrip, TravelWay, TripStatus } from "../../../Types";
+import { IMAGE_PLACEHOLDER } from "../../../Constants";
 import { useAuth } from "../../../context/AuthenticationContext";
+import styles from "./CreateTrip.module.css";
 
 const TripForm = ({formTitle, trip, submitForm }: {formTitle: string, trip?: ITrip, submitForm: Function}) => {
   const [locationName, setLocationName] = useState<string>(trip ? trip.locationName : "");
@@ -25,7 +25,7 @@ const TripForm = ({formTitle, trip, submitForm }: {formTitle: string, trip?: ITr
       userId: user?.uid!,
       locationName: locationName,
       country: country,
-      continent:continent,
+      continent:continent ? continent : Continents.EUROPE,
       travelWays: [...event.target.travelWay].filter(tw => tw.checked).map(tw => tw.value),
       totalCosts: totalCosts,
       dateFrom: dateFrom,

@@ -45,3 +45,7 @@ export interface ITrip {
     SIGNUP="/signup",
     LOGOUT="/logout"
   }
+
+  export enum Continents {
+    EUROPE= "Europe",
+  }
