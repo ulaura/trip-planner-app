@@ -88,6 +88,7 @@ const TripForm = ({formTitle, trip, submitForm }: {formTitle: string, trip?: ITr
         id="totalCosts"
         placeholder="$Total Costs"
         min={0}
+        step=".01"
       />
       <input  value={image} onChange={(event) => setImage(event.target.value)} type="text" name="imageUrl" placeholder="Image URL" autoComplete="off"/>
       </div>
